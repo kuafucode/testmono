@@ -25,7 +25,7 @@ jobs:
 
             -   uses: "ramsey/composer-install@v1"
                 env:
-                  COMPOSER_AUTH: '{"http-basic": {"repo.magento.com": {"username": "${{ secrets.MAGENTO_USER }}","password": "${{ secrets.MAGENTO_TOKEN }}"}}'
+                  COMPOSER_AUTH: '{"http-basic": {"repo.magento.com": {"username": "${{ secrets.MAGENTO_USER }}","password": "${{ secrets.MAGENTO_TOKEN }}"}}}'
 
           # get package json list
             -
