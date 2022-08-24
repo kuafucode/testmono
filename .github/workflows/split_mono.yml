@@ -24,8 +24,10 @@ jobs:
                     coverage: none
 
             -   uses: "ramsey/composer-install@v1"
+                env:
+                  COMPOSER_AUTH: '{"http-basic": {"repo.magento.com": {"username": "${{ secrets.MAGENTO_USER }}","password": "${{ secrets.MAGENTO_TOKEN }}"}}'
 
-            # get package json list
+          # get package json list
             -
                 id: output_data
                 run: echo "::set-output name=matrix::$(packages/monorepo-builder/bin/monorepo-builder packages-json --exclude-package easy-coding-standard --exclude-package monorepo-builder --exclude-package config-transformer --exclude-package easy-ci --exclude-package vendor-patches --exclude-package phpstan-rules)"
