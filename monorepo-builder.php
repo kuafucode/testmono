@@ -23,7 +23,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'phpunit/phpunit' => '^9.5',
         ],
     ]);
-    $parameters->set(Option::PACKAGE_DIRECTORIES, ["app/code/ISN", "packages"]);
+    $parameters->set(Option::PACKAGE_DIRECTORIES, ["packages"]);
 
     $services = $containerConfigurator->services();
 
