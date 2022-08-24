@@ -95,8 +95,8 @@
         "magento-force": "override"
     },
     "replace": {
-        "your-monorepo/first-package": "7.0.0",
-        "your-monorepo/second-package": "7.0.0"
+        "your-monorepo/first-package": "8.0.0",
+        "your-monorepo/second-package": "8.0.0"
     },
     "conflict": {
         "gene/bluefoot": "*"
