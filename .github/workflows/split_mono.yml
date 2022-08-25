@@ -1,67 +1,73 @@
 name: Split Monorepo
 
 on:
-    push:
-        branches:
-            - main
-        tags:
-            - '*'
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
 
 jobs:
-    provide_packages_json:
-        # see json juggling: https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#example-6
-        # see https://stackoverflow.com/a/62953566/1348344
-        runs-on: ubuntu-latest
+  provide_packages_json:
+    # see json juggling: https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#example-6
+    # see https://stackoverflow.com/a/62953566/1348344
+    runs-on: ubuntu-latest
 
-        steps:
-            -
-                uses: actions/checkout@v2
+    steps:
+      - id: set-matrix
+        run: |
+          JSON=$(cat ./satis.json)
+          echo "::set-output name=matrix::${JSON//'%'/'%25'}"
+      # get package json list
+      - id: output_data
+        run: echo "::set-output name=matrix::$(vendor/bin/monorepo-builder packages-json --exclude-package monorepo-builder)"
 
-            # required for matrix of packages set
-            -   uses: shivammathur/setup-php@v2
-                with:
-                    php-version: 8.1
-                    coverage: none
+    # this step is needed, so the output gets to the next defined job
+    outputs:
+      matrix: ${{ steps.output_data.outputs.matrix }}
 
-            -   uses: "ramsey/composer-install@v1"
-                env:
-                  COMPOSER_AUTH: '{"http-basic": {"repo.magento.com": {"username": "${{ secrets.MAGENTO_USER }}","password": "${{ secrets.MAGENTO_TOKEN }}"}}}'
+  split_monorepo:
+    needs: provide_packages_json
 
-          # get package json list
-            -
-                id: output_data
-                run: echo "::set-output name=matrix::$(vendor/bin/monorepo-builder packages-json --exclude-package monorepo-builder)"
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{fromJson(needs.provide_packages_json.outputs.matrix).repositories}}
 
-        # this step is needed, so the output gets to the next defined job
-        outputs:
-            matrix: ${{ steps.output_data.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v2
 
-    split_monorepo:
-        needs: provide_packages_json
+      # with tag
+      - if: "startsWith(github.ref, 'refs/tags/')"
+        # Uses an action in the root directory
+        name: Monorepo Tagged Split of ${{ matrix.package }}
+        uses: symplify/github-action-monorepo-split@2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          tag: ${GITHUB_REF#refs/tags/}
 
-        runs-on: ubuntu-latest
-        strategy:
-            fail-fast: false
-            matrix:
-                package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
+          package-directory: 'app/code/${{ matrix.package.folder }}'
+          split-repository-organization: 'kuafu-packages'
+          split-repository-name: '${{ matrix.package.name }}'
+          user-name: "GitHub Action"
+          user-email: "action@github.com"
+          branch: "main"
 
-        steps:
-            -   uses: actions/checkout@v2
-
-            # with tag
-            -
-                if: "startsWith(github.ref, 'refs/tags/')"
-                # Uses an action in the root directory
-                name: Monorepo Tagged Split of ${{ matrix.package }}
-                uses: symplify/github-action-monorepo-split@2.0
-                env:
-                    GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-                with:
-                    tag: ${GITHUB_REF#refs/tags/}
-
-                    package-directory: 'packages/${{ matrix.package }}'
-                    split-repository-organization: 'kuafu-packages'
-                    split-repository-name: '${{ matrix.package }}'
-                    user-name: "GitHub Action"
-                    user-email: "action@github.com"
-                    branch: "main"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dev-this/satis-build@v1
+        with:
+          token: ${{ GITHUB_TOKEN }} # App/OAuth token, PAT
+      - env:
+          GIT_EMAIL: bot@github.com
+          GIT_NAME: cool-bot
+        run: |
+          git config user.name $GIT_NAME
+          git config user.email $GIT_EMAIL
+          git add docs/
+          git commit -m "Re-built repository assets"
+          git push
