@@ -1,0 +1,9 @@
+{
+  "name": "kuafu/packages",
+  "homepage": "http://packages.example.com",
+  "repositories": [
+    { "type": "git", "url": "https://github.com/kuafu-packages/webservice-core", "name": "webservice-core", "folder": "WebserviceCore" }
+  ],
+  "require-all": true,
+  "output-dir": "docs"
+}

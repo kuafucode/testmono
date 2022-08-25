@@ -1,0 +1,10 @@
+/*
+!/.gitignore
+!/satis.json
+!/composer.*
+!/app
+/app/*
+/app/etc
+!/app/code
+!/app/code/ISN
+!/monorepo-builder.php
