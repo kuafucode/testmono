@@ -8,5 +8,5 @@
 !/app/code
 !/app/code/ISN
 !/monorepo-builder.php
-!/doc
+!/docs
 !/packages.json
