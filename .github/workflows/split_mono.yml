@@ -18,7 +18,7 @@ jobs:
       - id: set-matrix
         run: |
           JSON=$(cat ./satis.json)
-          echo "::set-output name=matrix::${JSON}"
+          echo "::set-output name=matrix::${JSON//'"'/'\"'}"
 
     # this step is needed, so the output gets to the next defined job
     outputs:
