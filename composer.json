@@ -36,6 +36,7 @@
             "**/update/**"
         ],
         "files": [
+            "app/code/ISN/WebserviceCore/registration.php",
             "app/etc/NonComposerComponentRegistration.php"
         ],
         "psr-0": {
@@ -45,6 +46,7 @@
             ]
         },
         "psr-4": {
+            "ISN\\WebserviceCore\\": "app/code/ISN/WebserviceCore/",
             "Magento\\": "app/code/Magento/",
             "Magento\\Framework\\": "lib/internal/Magento/Framework/",
             "Magento\\Setup\\": "setup/src/Magento/Setup/",
@@ -95,6 +97,7 @@
         "magento-force": "override"
     },
     "replace": {
+        "isn/webservice-core": "self.version",
         "your-monorepo/first-package": "10.0.0",
         "your-monorepo/second-package": "10.0.0"
     },
