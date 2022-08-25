@@ -19,9 +19,6 @@ jobs:
         run: |
           JSON=$(cat ./satis.json)
           echo "::set-output name=matrix::${JSON//'%'/'%25'}"
-      # get package json list
-      - id: output_data
-        run: echo "::set-output name=matrix::$(vendor/bin/monorepo-builder packages-json --exclude-package monorepo-builder)"
 
     # this step is needed, so the output gets to the next defined job
     outputs:
@@ -57,6 +54,8 @@ jobs:
           branch: "main"
 
   build:
+    needs: split_monorepo
+    
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
