@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
       - id: set-matrix
         run: |
           JSON=$(cat ./satis.json)
