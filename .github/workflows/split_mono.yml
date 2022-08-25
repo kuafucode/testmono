@@ -46,11 +46,11 @@ jobs:
         with:
           tag: ${GITHUB_REF#refs/tags/}
 
-          package-directory: 'app/code/ISN/${{ matrix.package.folder }}'
-          split-repository-organization: 'kuafu-packages'
-          split-repository-name: '${{ matrix.package.name }}'
-          user-name: "GitHub Action"
-          user-email: "action@github.com"
+          package_directory: 'app/code/ISN/${{ matrix.package.folder }}'
+          repository_organization: 'kuafu-packages'
+          repository_name: '${{ matrix.package.name }}'
+          user_name: "GitHub Action"
+          user_email: "action@github.com"
           branch: "main"
 
   build:
