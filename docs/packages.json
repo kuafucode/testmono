@@ -1,0 +1,12 @@
+{
+    "packages": [],
+    "includes": {
+        "include/all$ea1df0ef3791c66e9b897e68501943a053aec5e9.json": {
+            "sha1": "ea1df0ef3791c66e9b897e68501943a053aec5e9"
+        }
+    },
+    "metadata-url": "/p2/%package%.json",
+    "available-packages": [
+        "isn/webservice-core"
+    ]
+}
