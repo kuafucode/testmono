@@ -1,6 +1,7 @@
 {
   "name": "kuafu/packages",
-  "homepage": "http://packages.example.com",
+  "homepage": "https://kuafucode.github.io/testmono/",
+  "include-filename": "all.json",
   "repositories": [
     { "type": "git", "url": "https://github.com/kuafu-packages/webservice-core", "name": "webservice-core", "folder": "WebserviceCore" }
   ],
