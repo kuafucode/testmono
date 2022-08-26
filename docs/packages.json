@@ -1,11 +1,11 @@
 {
     "packages": [],
     "includes": {
-        "include/all$d00ab65accce7000c218e95e86d9bbeabc34037d.json": {
-            "sha1": "d00ab65accce7000c218e95e86d9bbeabc34037d"
+        "all.json": {
+            "sha1": "a3c7cc4a6b993858c5a82995fbe37c0cdfd501ec"
         }
     },
-    "metadata-url": "/p2/%package%.json",
+    "metadata-url": "/testmono/p2/%package%.json",
     "available-packages": [
         "isn/webservice-core"
     ]
