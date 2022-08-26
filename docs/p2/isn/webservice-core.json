@@ -144,6 +144,30 @@
                     "proprietary"
                 ],
                 "description": "This module enables the customer log in with a user_name or email address."
+            },
+            {
+                "name": "isn/webservice-core",
+                "version": "v24",
+                "version_normalized": "24.0.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/kuafu-packages/webservice-core",
+                    "reference": "6573bb95804f0d4b34a4bd7783c04892040b5bc8"
+                },
+                "time": "2022-08-26T16:46:00+00:00",
+                "type": "magento2-module",
+                "autoload": {
+                    "psr-4": {
+                        "ISN\\WebserviceCore\\": ""
+                    },
+                    "files": [
+                        "registration.php"
+                    ]
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "description": "This module enables the customer log in with a user_name or email address."
             }
         ]
     }

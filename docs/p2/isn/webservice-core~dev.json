@@ -8,9 +8,9 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/kuafu-packages/webservice-core",
-                    "reference": "c6bb80912968e67f64c01d9d9d4755153525770f"
+                    "reference": "6573bb95804f0d4b34a4bd7783c04892040b5bc8"
                 },
-                "time": "2022-08-25T19:46:47+00:00",
+                "time": "2022-08-26T16:46:00+00:00",
                 "default-branch": true,
                 "type": "magento2-module",
                 "autoload": {
