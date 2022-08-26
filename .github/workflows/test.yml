@@ -16,10 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
-    - name: Install dependencies
       env:
         COMPOSER_AUTH: '{"http-basic": {"repo.magento.com": {"username": "${{ secrets.MAGENTO_USER }}","password": "${{ secrets.MAGENTO_TOKEN }}"}}'
+
+    - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
