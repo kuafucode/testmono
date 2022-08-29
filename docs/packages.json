@@ -2,11 +2,12 @@
     "packages": [],
     "includes": {
         "all.json": {
-            "sha1": "8a7404a044cf02063bf3b4281bbc2d11b7c1f034"
+            "sha1": "1e85e1a712fd5223d0d3258ed2f9aeae0f075cc3"
         }
     },
     "metadata-url": "/testmono/p2/%package%.json",
     "available-packages": [
+        "isn/panda",
         "isn/webservice-core"
     ]
 }

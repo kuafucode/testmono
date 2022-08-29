@@ -1,5 +1,62 @@
 {
     "packages": {
+        "isn/panda": {
+            "v24.0.3": {
+                "name": "isn/panda",
+                "version": "v24.0.3",
+                "version_normalized": "24.0.3.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/kuafu-packages/panda",
+                    "reference": "9e7cd3036c6b0786b1528cd65a61b157cc275809"
+                },
+                "require": {
+                    "isn/webservice-core": "*"
+                },
+                "time": "2022-08-29T17:37:02+00:00",
+                "type": "magento2-module",
+                "autoload": {
+                    "psr-4": {
+                        "ISN\\Panda\\": ""
+                    },
+                    "files": [
+                        "registration.php"
+                    ]
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "description": "This module feeds products with price and availability from ERP."
+            },
+            "dev-main": {
+                "name": "isn/panda",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/kuafu-packages/panda",
+                    "reference": "9e7cd3036c6b0786b1528cd65a61b157cc275809"
+                },
+                "require": {
+                    "isn/webservice-core": "*"
+                },
+                "time": "2022-08-29T17:37:02+00:00",
+                "default-branch": true,
+                "type": "magento2-module",
+                "autoload": {
+                    "psr-4": {
+                        "ISN\\Panda\\": ""
+                    },
+                    "files": [
+                        "registration.php"
+                    ]
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "description": "This module feeds products with price and availability from ERP."
+            }
+        },
         "isn/webservice-core": {
             "v18": {
                 "name": "isn/webservice-core",
@@ -173,6 +230,54 @@
                 "name": "isn/webservice-core",
                 "version": "v24.0.1",
                 "version_normalized": "24.0.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/kuafu-packages/webservice-core",
+                    "reference": "89af69ff1ec303427988e16b4c8f5819ca67a492"
+                },
+                "time": "2022-08-29T17:09:06+00:00",
+                "type": "magento2-module",
+                "autoload": {
+                    "psr-4": {
+                        "ISN\\WebserviceCore\\": ""
+                    },
+                    "files": [
+                        "registration.php"
+                    ]
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "description": "This module provides fundamental utility methods to make ERP webservice requests."
+            },
+            "v24.0.2": {
+                "name": "isn/webservice-core",
+                "version": "v24.0.2",
+                "version_normalized": "24.0.2.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/kuafu-packages/webservice-core",
+                    "reference": "89af69ff1ec303427988e16b4c8f5819ca67a492"
+                },
+                "time": "2022-08-29T17:09:06+00:00",
+                "type": "magento2-module",
+                "autoload": {
+                    "psr-4": {
+                        "ISN\\WebserviceCore\\": ""
+                    },
+                    "files": [
+                        "registration.php"
+                    ]
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "description": "This module provides fundamental utility methods to make ERP webservice requests."
+            },
+            "v24.0.3": {
+                "name": "isn/webservice-core",
+                "version": "v24.0.3",
+                "version_normalized": "24.0.3.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/kuafu-packages/webservice-core",
