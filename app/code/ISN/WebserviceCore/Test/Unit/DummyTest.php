@@ -7,6 +7,6 @@ class DummyTest extends TestCase
 {
     public function testNothing()
     {
-        $this->assertEquals(true, false);
+        $this->assertEquals(true, true);
     }
 }

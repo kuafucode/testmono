@@ -20,7 +20,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // for "merge" command
     $parameters->set(Option::DATA_TO_APPEND, [
         ComposerJsonSection::REQUIRE_DEV => [
-            'phpunit/phpunit' => '^9.5',
+            'phpunit/phpunit' => '~9.5.0',
         ],
     ]);
     $parameters->set(Option::PACKAGE_DIRECTORIES, ["app/code/ISN"]);

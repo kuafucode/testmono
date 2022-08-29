@@ -1,0 +1,17 @@
+{
+    "name": "isn/panda",
+    "description": "This module feeds products with price and availability from ERP.",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "require": {
+        "isn/webservice-core": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ISN\\Panda\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

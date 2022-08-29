@@ -1,9 +1,8 @@
 {
     "name": "isn/webservice-core",
-    "description": "This module enables the customer log in with a user_name or email address.",
+    "description": "This module provides fundamental utility methods to make ERP webservice requests.",
     "type": "magento2-module",
     "license": "proprietary",
-    "require": {},
     "autoload": {
         "psr-4": {
             "ISN\\WebserviceCore\\": ""
