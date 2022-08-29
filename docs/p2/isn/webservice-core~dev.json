@@ -8,9 +8,9 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/kuafu-packages/webservice-core",
-                    "reference": "6573bb95804f0d4b34a4bd7783c04892040b5bc8"
+                    "reference": "89af69ff1ec303427988e16b4c8f5819ca67a492"
                 },
-                "time": "2022-08-26T16:46:00+00:00",
+                "time": "2022-08-29T17:09:06+00:00",
                 "default-branch": true,
                 "type": "magento2-module",
                 "autoload": {
@@ -24,7 +24,7 @@
                 "license": [
                     "proprietary"
                 ],
-                "description": "This module enables the customer log in with a user_name or email address."
+                "description": "This module provides fundamental utility methods to make ERP webservice requests."
             }
         ]
     }

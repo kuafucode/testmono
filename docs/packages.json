@@ -2,7 +2,7 @@
     "packages": [],
     "includes": {
         "all.json": {
-            "sha1": "268362ef9eb0891659e0b87d6d8c91f64f09e3f6"
+            "sha1": "8a7404a044cf02063bf3b4281bbc2d11b7c1f034"
         }
     },
     "metadata-url": "/testmono/p2/%package%.json",
