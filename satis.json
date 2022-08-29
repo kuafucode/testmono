@@ -4,7 +4,7 @@
   "include-filename": "all.json",
   "repositories": [
     { "type": "git", "url": "https://github.com/kuafu-packages/webservice-core", "name": "webservice-core", "folder": "WebserviceCore" },
-    { "type": "git", "url": "https://github.com/kuafu-packages/panda", "name": "panda", "folder": "panda" }
+    { "type": "git", "url": "https://github.com/kuafu-packages/panda", "name": "panda", "folder": "Panda" }
   ],
   "require-all": true,
   "output-dir": "docs"
